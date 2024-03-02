@@ -26,4 +26,6 @@ public:
 	static TextureManager* Instance();
 };
 
+typedef TextureManager TheTextureManager;
+
 #endif

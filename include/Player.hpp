@@ -1,0 +1,20 @@
+#ifndef __ENTITY__
+#define __ENTITY__
+
+#include<GameObject.hpp>
+
+class Player : public GameObject{
+	
+public:
+
+	void load(int x_pos, int y_pos, int width, int height, std::string Id_Texture);
+
+	void draw(SDL_Renderer* m_Renderer);
+
+	void update();
+
+	void clean();
+
+};
+
+#endif

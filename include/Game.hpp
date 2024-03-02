@@ -10,7 +10,8 @@
 #include<SDL2/SDL_image.h>
 #include"TextureManager.hpp"
 
-typedef TextureManager TheTextureManager;
+#include"GameObject.hpp"
+#include"Player.hpp"
 
 class Game{
 
@@ -21,6 +22,9 @@ private:
 
 	TextureManager* g_TextMan;	
 	int m_currentFrame;
+
+	GameObject m_go;
+	Player m_player;
 
 public:
 
