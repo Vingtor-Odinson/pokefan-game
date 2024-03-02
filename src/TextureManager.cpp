@@ -28,6 +28,14 @@ bool TextureManager::load(std::string fileName, std::string id, SDL_Renderer* pR
 void TextureManager::draw(std::string id, int x_src, int y_src, int w_src, int h_src, SDL_Renderer* pRenderer, int x_dst, int y_dst, int w_dst, int h_dst, SDL_RendererFlip flip)
 {
 
+	/***
+	 * 
+	 * Desenha o pedaço de textura (id) na posição (x_src, y_src), com tamanho
+	 * (w, h) = (w_src, h_src) no renderer pRenderer na posição (x_dst, y_dst)
+	 * com tamanho (w, h) = (w_dst, h_dst) e com possível flip
+	 * 
+	 ***/
+
 	SDL_Rect m_srcRect;
 	SDL_Rect m_dstRect;
 
@@ -53,6 +61,15 @@ void TextureManager::draw(std::string id, int x_src, int y_src, int w_src, int h
 
 void TextureManager::drawFrame(std::string id, int x_src, int y_src, int w_src, int h_src, int currentRow, int currentCollumn, SDL_Renderer* pRenderer, int x_dst, int y_dst, int w_dst, int h_dst, SDL_RendererFlip flip)
 {
+	/***
+	 * 
+	 * Desenha o frame em (currentRow, currentCollumn) 
+	 * da textura (id) na posição (x_src, y_src), com tamanho
+	 * (w, h) = (w_src, h_src) no renderer pRenderer na posição (x_dst, y_dst)
+	 * com tamanho (w, h) = (w_dst, h_dst) e com possível flip
+	 * 
+	 ***/
+
 
 	SDL_Rect m_srcRect;
 	SDL_Rect m_dstRect;

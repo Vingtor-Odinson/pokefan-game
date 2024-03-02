@@ -1,23 +1,19 @@
 #include"Game.hpp"
 
-Game* game;
-
 int main(int argc, char* args[]){
 
-	game = new Game();
-
-	game->Init("Teste da Classe Game", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 640, 480, SDL_WINDOW_RESIZABLE);
+	TheGame::Instance()->Init("Teste da Classe Game", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 640, 480, SDL_WINDOW_RESIZABLE);
 	
-	while(game->Running())
+	while(TheGame::Instance()->Running())
 	{
 
-		game->HandleEvents();
-		game->Update();
-		game->Render();
+		TheGame::Instance()->HandleEvents();
+		TheGame::Instance()->Update();
+		TheGame::Instance()->Render();
 
 	}
 
-	game->Close();
+	TheGame::Instance()->Close();
 
 	return 0;
 }

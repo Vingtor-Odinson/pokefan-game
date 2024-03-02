@@ -2,6 +2,7 @@
 #define __TEXTURE_MANAGER__
 
 #include<map>
+#include<string>
 #include<SDL2/SDL.h>
 #include<SDL2/SDL_image.h>
 
@@ -24,5 +25,7 @@ public:
 
 	static TextureManager* Instance();
 };
+
+typedef TextureManager TheTextureManager;
 
 #endif

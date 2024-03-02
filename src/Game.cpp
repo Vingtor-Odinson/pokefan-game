@@ -1,5 +1,7 @@
 #include<Game.hpp>
 
+Game* Game::c_pInstance = 0;
+
 bool Game::Init(const char* title, int x, int y, int width, int height, Uint32 flags)
 {
 	if( SDL_Init( SDL_INIT_EVERYTHING ) >= 0)
@@ -29,6 +31,11 @@ bool Game::Init(const char* title, int x, int y, int width, int height, Uint32 f
 
 	c_bRunning = true;
 
+	TheTextureManager::Instance()->load("res/Brendan.png", "BrendanWalk", g_prenderer); //Uses the Texture Manager to read the image and create a texture
+
+	m_player1.load(300, 0, 70, 110, "BrendanWalk");
+	m_player2.load(200, 0, 70, 110, "BrendanWalk");
+
 	return true;
 }
 
@@ -42,15 +49,9 @@ void Game::Render()
 	SDL_SetRenderDrawColor( g_prenderer, 255, 255, 255, 255);
 
 	SDL_RenderClear(g_prenderer); //Clear the window to black
-	
-	int Window_w = SDL_GetWindowSurface(g_pwindow)->w;
-	int Window_h = SDL_GetWindowSurface(g_pwindow)->h;
-	int Text_w = int(Window_w*160/640);
-	int Text_h = int(Window_h*160/480);
 
-	TheTextureManager::Instance()->load("res/Brendan.png", "BrendanWalk", g_prenderer); //Uses the Texture Manager to read the image and create a texture
-
-	TheTextureManager::Instance()->drawFrame("BrendanWalk", 0, 0, 14, 22, m_currentFrame, 1, g_prenderer, (Window_w - Text_w)/2, (Window_h - Text_h)/2, Text_w, Text_h); //Draw the actual frame
+	m_player1.draw(g_prenderer);
+	m_player2.draw(g_prenderer);
 
 	SDL_RenderPresent(g_prenderer); //Show the window
 }
@@ -65,7 +66,8 @@ void Game::Close()
 
 void Game::Update()
 {
-	m_currentFrame = int((SDL_GetTicks() / 200)%3) - 1;
+	m_player1.update();
+	m_player2.update();
 }
 
 void Game::HandleEvents()
@@ -81,4 +83,18 @@ void Game::HandleEvents()
 			break;
 		}
 	}
+}
+
+Game* Game::Instance()
+{
+	if( c_pInstance == 0 ){
+		c_pInstance = new Game();
+	}
+
+	return c_pInstance;
+}
+
+SDL_Renderer* Game::getRenderer()
+{
+	return g_prenderer;
 }
