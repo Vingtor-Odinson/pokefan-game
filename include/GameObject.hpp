@@ -21,8 +21,6 @@ protected:
 
 public:
 
-	void load(int x_pos, int y_pos, int width, int height, std::string Id_Texture);
-
 	void draw(SDL_Renderer* m_Renderer);
 
 	void update();

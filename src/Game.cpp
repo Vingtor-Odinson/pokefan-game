@@ -1,5 +1,7 @@
 #include<Game.hpp>
 
+Game* Game::c_pInstance = 0;
+
 bool Game::Init(const char* title, int x, int y, int width, int height, Uint32 flags)
 {
 	if( SDL_Init( SDL_INIT_EVERYTHING ) >= 0)
@@ -31,8 +33,8 @@ bool Game::Init(const char* title, int x, int y, int width, int height, Uint32 f
 
 	TheTextureManager::Instance()->load("res/Brendan.png", "BrendanWalk", g_prenderer); //Uses the Texture Manager to read the image and create a texture
 
-	m_go.load(100, 100, 70, 110, "BrendanWalk");
-	m_player.load(300, 300, 70, 110, "BrendanWalk");
+	m_player1.load(300, 0, 70, 110, "BrendanWalk");
+	m_player2.load(200, 0, 70, 110, "BrendanWalk");
 
 	return true;
 }
@@ -48,8 +50,8 @@ void Game::Render()
 
 	SDL_RenderClear(g_prenderer); //Clear the window to black
 
-	m_go.draw(g_prenderer);
-	m_player.draw(g_prenderer);
+	m_player1.draw(g_prenderer);
+	m_player2.draw(g_prenderer);
 
 	SDL_RenderPresent(g_prenderer); //Show the window
 }
@@ -64,7 +66,8 @@ void Game::Close()
 
 void Game::Update()
 {
-	m_player.update();
+	m_player1.update();
+	m_player2.update();
 }
 
 void Game::HandleEvents()
@@ -80,4 +83,18 @@ void Game::HandleEvents()
 			break;
 		}
 	}
+}
+
+Game* Game::Instance()
+{
+	if( c_pInstance == 0 ){
+		c_pInstance = new Game();
+	}
+
+	return c_pInstance;
+}
+
+SDL_Renderer* Game::getRenderer()
+{
+	return g_prenderer;
 }

@@ -23,8 +23,10 @@ private:
 	TextureManager* g_TextMan;	
 	int m_currentFrame;
 
-	GameObject m_go;
-	Player m_player;
+	Player m_player1;
+	Player m_player2;
+
+	Game(){}
 
 public:
 
@@ -40,6 +42,14 @@ public:
 	
 	void Close();
 
+	static Game* Instance();
+
+	SDL_Renderer* getRenderer();
+
+	static Game* c_pInstance;
+
 };
+
+typedef Game TheGame;
 
 #endif
