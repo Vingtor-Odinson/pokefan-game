@@ -3,13 +3,13 @@
 #define __GAME_OBJECT__
 
 #include<TextureManager.hpp>
+#include"Vector2.hpp"
 
 class GameObject{
 
 protected:
 
-	int m_x;
-	int m_y;
+	Vector2 m_position = Vector2(0.0f, 0.0f);
 
 	int m_textW;
 	int m_textH;
@@ -21,11 +21,11 @@ protected:
 
 public:
 
-	void draw(SDL_Renderer* m_Renderer);
+	virtual void draw(SDL_Renderer* m_Renderer);
 
-	void update();
+	virtual void update();
 
-	void clean();
+	virtual void clean();
 
 };
 

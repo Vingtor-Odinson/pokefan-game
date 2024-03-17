@@ -19,9 +19,9 @@ public:
 
 	bool load(std::string fileName, std::string id, SDL_Renderer* pRenderer);
 
-	void draw(std::string id, int x_src, int y_src, int w_src, int h_src, SDL_Renderer* pRenderer, int x_dst = 0, int y_dst = 0, int w_dst = -1, int h_dst = -1, SDL_RendererFlip flip = SDL_FLIP_NONE);
+	void draw(std::string id, float x_src, float y_src, int w_src, int h_src, SDL_Renderer* pRenderer, float x_dst = 0, float y_dst = 0, int w_dst = -1, int h_dst = -1, SDL_RendererFlip flip = SDL_FLIP_NONE);
 
-	void drawFrame(std::string id, int x_src, int y_src, int w_src, int h_src, int currentRow, int currentCollumn, SDL_Renderer* pRenderer, int x_dst = 0, int y_dst = 0, int w_dst = -1, int h_dst = -1, SDL_RendererFlip flip = SDL_FLIP_NONE);
+	void drawFrame(std::string id, float x_src, float y_src, int w_src, int h_src, int currentRow, int currentCollumn, SDL_Renderer* pRenderer, float x_dst = 0, float y_dst = 0, int w_dst = -1, int h_dst = -1, SDL_RendererFlip flip = SDL_FLIP_NONE);
 
 	static TextureManager* Instance();
 };

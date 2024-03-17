@@ -25,7 +25,7 @@ bool TextureManager::load(std::string fileName, std::string id, SDL_Renderer* pR
 	return false;
 }
 
-void TextureManager::draw(std::string id, int x_src, int y_src, int w_src, int h_src, SDL_Renderer* pRenderer, int x_dst, int y_dst, int w_dst, int h_dst, SDL_RendererFlip flip)
+void TextureManager::draw(std::string id, float x_src, float y_src, int w_src, int h_src, SDL_Renderer* pRenderer, float x_dst, float y_dst, int w_dst, int h_dst, SDL_RendererFlip flip)
 {
 
 	/***
@@ -59,7 +59,7 @@ void TextureManager::draw(std::string id, int x_src, int y_src, int w_src, int h
 	SDL_RenderCopyEx(pRenderer, m_textureMap[id.c_str()], &m_srcRect, &m_dstRect, 0, 0, flip);
 }
 
-void TextureManager::drawFrame(std::string id, int x_src, int y_src, int w_src, int h_src, int currentRow, int currentCollumn, SDL_Renderer* pRenderer, int x_dst, int y_dst, int w_dst, int h_dst, SDL_RendererFlip flip)
+void TextureManager::drawFrame(std::string id, float x_src, float y_src, int w_src, int h_src, int currentRow, int currentCollumn, SDL_Renderer* pRenderer, float x_dst, float y_dst, int w_dst, int h_dst, SDL_RendererFlip flip)
 {
 	/***
 	 * 
