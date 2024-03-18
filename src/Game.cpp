@@ -66,6 +66,7 @@ void Game::Close()
 
 void Game::Update()
 {
+	TheInputHandler::Instance()->update();
 	m_player1.update();
 	m_player2.update();
 }
