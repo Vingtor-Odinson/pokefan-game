@@ -1,9 +1,9 @@
 #include"Player.hpp"
 
-void Player::load(int x_pos, int y_pos, int width, int height, std::string Id_Texture)
+void Player::load(float x_pos, float y_pos, int width, int height, std::string Id_Texture)
 {
-	m_x = x_pos;
-	m_y = y_pos;
+	m_position.setX(x_pos);
+	m_position.setY(y_pos);
 
 	m_textW = width;
 	m_textH = height;
