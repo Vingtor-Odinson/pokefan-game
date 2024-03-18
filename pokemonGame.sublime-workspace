@@ -52,10 +52,10 @@
 	"buffers":
 	[
 		{
-			"file": "src/main.cpp",
+			"file": "src/Game.cpp",
 			"settings":
 			{
-				"buffer_size": 386,
+				"buffer_size": 1710,
 				"line_ending": "Windows"
 			}
 		}
@@ -162,20 +162,20 @@
 			[
 				{
 					"buffer": 0,
-					"file": "src/main.cpp",
+					"file": "src/Game.cpp",
 					"selected": true,
 					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 386,
+						"buffer_size": 1710,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								188,
-								188
+								0,
+								0
 							]
 						],
 						"settings":

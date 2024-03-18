@@ -24,3 +24,6 @@ void Player::update()
 	m_currentRow = int((SDL_GetTicks() / 200)%3) - 1;
 }
 
+void Player::clean()
+{
+}

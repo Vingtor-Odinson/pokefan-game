@@ -21,11 +21,11 @@ protected:
 
 public:
 
-	void draw(SDL_Renderer* m_Renderer);
+	virtual void draw(SDL_Renderer* m_Renderer);
 
-	void update();
+	virtual void update();
 
-	void clean();
+	virtual void clean();
 
 };
 

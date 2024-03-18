@@ -12,6 +12,7 @@
 
 #include"GameObject.hpp"
 #include"Player.hpp"
+#include"Vector2.hpp"
 
 class Game{
 
