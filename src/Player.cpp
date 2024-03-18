@@ -20,7 +20,26 @@ void Player::draw(SDL_Renderer* m_Renderer)
 }
 
 void Player::update()
-{
+{	
+	if(TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_D))
+	{
+		m_position.setX( m_position.getX() + 10 );
+	}
+	else if(TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_A))
+	{
+		m_position.setX( m_position.getX() - 10 );
+	}
+	else if(TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_W))
+	{	
+		m_position.setY( m_position.getY() - 10 );
+	}
+	else if(TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_S))
+	{	
+		m_position.setY( m_position.getY() + 10 );
+	}
+
+
+
 	m_currentRow = int((SDL_GetTicks() / 200)%3) - 1;
 }
 

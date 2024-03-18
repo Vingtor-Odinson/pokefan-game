@@ -2,6 +2,7 @@
 #define __ENTITY__
 
 #include<GameObject.hpp>
+#include<InputHandler.hpp>
 
 class Player : public GameObject{
 	

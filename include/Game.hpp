@@ -12,6 +12,7 @@
 
 #include"GameObject.hpp"
 #include"Player.hpp"
+#include"InputHandler.hpp"
 
 class Game{
 
